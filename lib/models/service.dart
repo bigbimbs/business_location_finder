@@ -1,4 +1,6 @@
-class Service {
+import '../widgets/info_card.dart';
+
+class Service implements CardData {
   final String name;
   final String description;
   final double price;
@@ -57,4 +59,13 @@ class Service {
   String toString() {
     return 'Service(name: $name, description: $description, price: $price)';
   }
+
+  @override
+  String get title => name;
+
+  @override
+  String get subtitle => description;
+
+  @override
+  String get trailing => '\$${price.toStringAsFixed(2)}';
 }
